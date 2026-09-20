@@ -1,0 +1,21 @@
+# AT-DvP — codeplug AnyTone AT-D878UVII Plus (IU1FLA).
+# In repo: CSV CPS, script Python, snapshot iniziali, documentazione.
+# Fuori repo: log, cache, Excel/codeplug binari generati localmente.
+
+/*
+!.gitignore
+!requirements.txt
+!codeplug_utils.py
+!Script1_BuildExcel.py
+!Script2_ExportCSV.py
+!CurrentConfiguration/
+!CurrentConfiguration/**
+!start/
+!start/**
+!docs/
+!docs/**
+!PROJECT_STATE.md
+!.cursorrules
+!.cursor/
+!.cursor/rules/
+!.cursor/rules/**

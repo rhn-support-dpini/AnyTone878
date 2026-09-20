@@ -1,0 +1,6 @@
+# Memoria e Continuità del Progetto
+
+- All'inizio di ogni nuova sessione o conversazione, leggi il file `PROJECT_STATE.md` per riprendere il contesto del lavoro svolto finora.
+- Rispetta sempre le convenzioni, le architetture e le soluzioni ai bug già documentate in `PROJECT_STATE.md`.
+- Alla fine di ogni compito complesso o prima di chiudere la sessione, aggiorna `PROJECT_STATE.md` con i nuovi progressi e gli insegnamenti appresi.
+- La directory attiva di configurazione è `CurrentConfiguration/` (export CSV dal CPS AnyTone). Ignora file obsoleti nella root del workspace se non allineati a `CurrentConfiguration/`.
