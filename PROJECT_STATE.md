@@ -33,9 +33,23 @@ Documento di handoff per sessioni successive: radio, struttura repo, modifiche r
 | Modello | AT-D878UVII Plus |
 | Callsign | IU1FLA |
 | DMR ID | 2221851 |
-| Zone all'avvio | 1 = Analog, 2 = Digital (`StartZone1/2`) |
-| Canale all'avvio | Ripristina ultimo usato (`StartChUse=1`) |
+| Zone all'avvio | 2 = Digital su entrambi i lati (`StartZone1/2=2`) |
+| Canale all'avvio | Fisso: Cluster (#6) + APRS (#9) (`StartChUse=0`) |
+| Display | Schermo diviso (`SubMode=1`, `DiviDisEn=1`); backlight **30 s** (`AutoBKLightTime=6`) |
 | GPS | On, modalità APRS, beacon posizione |
+
+### Display e tasti programmabili (non in CSV)
+
+L'export CSV **non include** le assegnazioni tasti (`P1 Long`, `P2 Long`, ecc.). Vanno reimpostate **manualmente nel CPS** dopo ogni import CSV, prima di scrivere sulla radio:
+
+**CPS → Public/Common Setting → Optional Setting → Key Function**
+
+| Tasto | Pressione | Funzione CPS |
+|-------|-----------|--------------|
+| **P1** | Long | **Main CH Switch** (alterna canale A/B sul display) |
+| **P2** | Long | **Sub CH Hide** (visualizzazione 1 o 2 canali) |
+
+Backlight 30 s: `OptionalSetting.CSV` → `AutoBKLightTime=6` (già impostato).
 
 ### Zone (ordine 1–10)
 
@@ -66,6 +80,8 @@ Documento di handoff per sessioni successive: radio, struttura repo, modifiche r
 6. Riordino zone e memoria canali (#1–#688, gruppi con 5 righe vuote).
 7. **IR1UGF:** canali Parrot + APRS, Talk Group Parrot 222997, GPS/APRS in OptionalSetting.
 8. Parrot su **slot 2**; intervallo invio posizione **60 s**.
+9. Zona Digital: solo canali IR1UGF; avvio su Cluster + APRS; schermo diviso.
+10. **Backlight 30 s** (`AutoBKLightTime=6`); tasti P1/P2 long documentati (solo CPS).
 
 ### Baseline
 
@@ -96,9 +112,10 @@ python3 Script2_ExportCSV.py .
 
 ## Prossimi passi suggeriti
 
-1. Re-importare `CurrentConfiguration/` nel CPS e scrivere sulla radio dopo ogni modifica significativa.
-2. Rigenerare `AnyTone.rdt` dal CPS se serve backup binario (non versionato in git).
-3. Verificare su BrandMeister/APRS.fi ricezione beacon IR1UGF dopo attivazione GPS.
+1. Re-importare `CurrentConfiguration/` nel CPS.
+2. **Reimpostare Key Function** (P1 Long, P2 Long) nel CPS — non esportate nei CSV.
+3. Scrivere il codeplug sulla radio.
+4. Rigenerare `AnyTone.rdt` dal CPS come backup binario (non versionato in git).
 
 ---
 
