@@ -33,7 +33,7 @@ Documento di handoff per sessioni successive: radio, struttura repo, modifiche r
 | Modello | AT-D878UVII Plus |
 | Callsign | IU1FLA |
 | DMR ID | 2221851 |
-| Zone all'avvio | 2 = Digital su entrambi i lati (`StartZone1/2=2`) |
+| Zone all'avvio | 2 = **DigiAL** su entrambi i lati (`StartZone1/2=2`) |
 | Canale all'avvio | Fisso: Cluster (#6) + APRS (#9) (`StartChUse=0`) |
 | Display | Schermo diviso (`SubMode=1`, `DiviDisEn=1`); backlight **30 s** (`AutoBKLightTime=6`) |
 | GPS | On, modalità APRS, beacon posizione |
@@ -53,7 +53,7 @@ Backlight 30 s: `OptionalSetting.CSV` → `AutoBKLightTime=6` (già impostato).
 
 ### Zone (ordine 1–10)
 
-1. Analog — 2. Digital — 3. AIB — 4. Emergenza — 5. pmr — 6. lpd — 7. CRI — 8. D2ALP — 9. Marini — 10. vhf-uhf
+1. Analog — 2. **DigiAL** (IR1UGF + IK1HJT) — 3. AIB — 4. Emergenza — 5. pmr — 6. lpd — 7. CRI — 8. D2ALP — 9. Marini — 10. vhf-uhf
 
 ### IR1UGF (Ponzone, BrandMeister)
 
@@ -87,7 +87,7 @@ Stack completo (#63, #82–#89): Worldwide, Europe, Italia, Discon, Loca1, Clust
 - **AL-IK1HJT-Italia (#83):** D-APRS attivo (Report Channel 1 → IK1HJT APRS)
 - **APRS.CSV:** `channel1=81`/`slot1=2` (IR1UGF), `channel2=89`/`slot2=2` (IK1HJT), TG 222999
 - **Scan list Digital:** 18 canali (9 IR1UGF + 9 IK1HJT)
-- **Zona Digital:** resta solo IR1UGF (boot invariato); IK1HJT in memoria + scan
+- **Zona DigiAL (#2):** 18 canali (9 IR1UGF + 9 IK1HJT); boot invariato su Cluster + APRS IR1UGF
 - Rimosso vecchio canale singolo `IK1HJT Arquata` dalla zona D2ALP
 
 ---
@@ -106,6 +106,7 @@ Stack completo (#63, #82–#89): Worldwide, Europe, Italia, Discon, Loca1, Clust
 8. **Header CSV:** corretti `OptionalSetting.CSV` e `APRS.CSV` (campi concatenati + riga dati APRS spezzata).
 9. **Fix import CPS:** `APRS.CSV` riga dati unificata (232 colonne); `OptionalSetting.CSV` aggiunto valore mancante `SateAosLimit=0`.
 10. **Slot DMR IR1UGF/IK1HJT:** slot **1** = Worldwide/Europe/Italia/Loca1/Cluster; slot **2** = Discon/Loca2/Parrot/APRS (`APRS.CSV` slot1/slot2=2).
+11. **Zona Digital → DigiAL:** rinominata; aggiunti 9 canali IK1HJT (18 canali totali in zona #2).
 
 ### Sessione 2026-09-20
 
