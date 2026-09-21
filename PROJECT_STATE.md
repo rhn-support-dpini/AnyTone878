@@ -102,6 +102,7 @@ Stack completo (#63, #82–#89): Worldwide, Europe, Italia, Discon, Loca1, Clust
 6. **Scan list CRI:** tutti i 24 canali CRI con `Scan List=CRI`.
 7. **Canale analogico APRS** (#1, 144.8 MHz): rimosso (slot vuoto).
 8. **Header CSV:** corretti `OptionalSetting.CSV` e `APRS.CSV` (campi concatenati + riga dati APRS spezzata).
+9. **Fix import CPS:** `APRS.CSV` riga dati unificata (232 colonne); `OptionalSetting.CSV` aggiunto valore mancante `SateAosLimit=0`.
 
 ### Sessione 2026-09-20
 
