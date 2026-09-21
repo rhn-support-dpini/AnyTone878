@@ -66,19 +66,42 @@ Backlight 30 s: `OptionalSetting.CSV` → `AutoBKLightTime=6` (già impostato).
 - **APRS Auto TX Interval:** 60 s
 - Prima attivazione APRS sulla radio: SMS `@SSID 7` in privato a 222999
 
+### IK1HJT (Arquata, BrandMeister)
+
+| Parametro | Valore |
+|-----------|--------|
+| Downlink (RX) | 430.300 MHz |
+| Uplink (TX) | 437.900 MHz |
+| Offset | +7.6 MHz |
+| Color code | 1 |
+
+Stack completo (#63, #82–#89): Worldwide, Europe, Italia, Discon, Loca1, Cluster, Loca2, Parrot, APRS — stessa struttura IR1UGF.
+
+| Canale | Slot | Note |
+|--------|------|------|
+| IK1HJT Parrot (#88) | 2 | Private 222997, TX Always |
+| IK1HJT APRS (#89) | 2 | Private 222999, D-APRS |
+
+- **AL-IK1HJT-Italia (#83):** D-APRS attivo (Report Channel 1 → IK1HJT APRS)
+- **APRS.CSV:** `channel2=89`, `slot2=2`, TG 222999 (secondo ripetitore)
+- **Scan list Digital:** 18 canali (9 IR1UGF + 9 IK1HJT)
+- **Zona Digital:** resta solo IR1UGF (boot invariato); IK1HJT in memoria + scan
+- Rimosso vecchio canale singolo `IK1HJT Arquata` dalla zona D2ALP
+
 ---
 
 ## Modifiche applicate (cronologia)
 
 ### Sessione 2026-09-21
 
-1. **IR1UGF Parrot:** `Busy Lock/TX Permit=Always` (TX abilitata).
-2. **Friend/contact Enzo IK1EVM:** DMR ID 2221707 in `TalkGroups.CSV` + `Call Alert=Online Alert` in `DigitalContactList.CSV`.
-3. **Scan list Digital:** solo 9 canali IR1UGF; rimossi D2ALP e IR1UIZ.
-4. **Scan list Altri:** eliminata (canali OS4/PS2/IR3 restano in memoria, fuori zona).
-5. **Scan list CRI:** tutti i 24 canali CRI con `Scan List=CRI`.
-6. **Canale analogico APRS** (#1, 144.8 MHz): rimosso (slot vuoto).
-7. **Header CSV:** corretti `OptionalSetting.CSV` e `APRS.CSV` (campi concatenati + riga dati APRS spezzata).
+1. **IK1HJT Arquata:** stack 9 canali (430.300/437.900, CC 1), scan Digital, D-APRS su Italia + APRS #89.
+2. **IR1UGF Parrot:** `Busy Lock/TX Permit=Always` (TX abilitata).
+3. **Friend/contact Enzo IK1EVM:** DMR ID 2221707 in `TalkGroups.CSV` + `Call Alert=Online Alert` in `DigitalContactList.CSV`.
+4. **Scan list Digital:** solo 9 canali IR1UGF; rimossi D2ALP e IR1UIZ.
+5. **Scan list Altri:** eliminata (canali OS4/PS2/IR3 restano in memoria, fuori zona).
+6. **Scan list CRI:** tutti i 24 canali CRI con `Scan List=CRI`.
+7. **Canale analogico APRS** (#1, 144.8 MHz): rimosso (slot vuoto).
+8. **Header CSV:** corretti `OptionalSetting.CSV` e `APRS.CSV` (campi concatenati + riga dati APRS spezzata).
 
 ### Sessione 2026-09-20
 
