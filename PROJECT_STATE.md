@@ -1,6 +1,6 @@
 # PROJECT_STATE — AT-DvP
 
-Ultimo aggiornamento: 2026-09-20.
+Ultimo aggiornamento: 2026-09-21.
 
 Documento di handoff per sessioni successive: radio, struttura repo, modifiche recenti, convenzioni.
 
@@ -69,6 +69,14 @@ Backlight 30 s: `OptionalSetting.CSV` → `AutoBKLightTime=6` (già impostato).
 ---
 
 ## Modifiche applicate (cronologia)
+
+### Sessione 2026-09-21
+
+1. **Scan list Digital:** solo 9 canali IR1UGF; rimossi D2ALP e IR1UIZ.
+2. **Scan list Altri:** eliminata (canali OS4/PS2/IR3 restano in memoria, fuori zona).
+3. **Scan list CRI:** tutti i 24 canali CRI con `Scan List=CRI`.
+4. **Canale analogico APRS** (#1, 144.8 MHz): rimosso (slot vuoto).
+5. **Header CSV:** corretti `OptionalSetting.CSV` e `APRS.CSV` (campi concatenati + riga dati APRS spezzata).
 
 ### Sessione 2026-09-20
 
