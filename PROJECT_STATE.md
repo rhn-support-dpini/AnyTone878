@@ -72,11 +72,13 @@ Backlight 30 s: `OptionalSetting.CSV` → `AutoBKLightTime=6` (già impostato).
 
 ### Sessione 2026-09-21
 
-1. **Scan list Digital:** solo 9 canali IR1UGF; rimossi D2ALP e IR1UIZ.
-2. **Scan list Altri:** eliminata (canali OS4/PS2/IR3 restano in memoria, fuori zona).
-3. **Scan list CRI:** tutti i 24 canali CRI con `Scan List=CRI`.
-4. **Canale analogico APRS** (#1, 144.8 MHz): rimosso (slot vuoto).
-5. **Header CSV:** corretti `OptionalSetting.CSV` e `APRS.CSV` (campi concatenati + riga dati APRS spezzata).
+1. **IR1UGF Parrot:** `Busy Lock/TX Permit=Always` (TX abilitata).
+2. **Friend/contact Enzo IK1EVM:** DMR ID 2221707 in `TalkGroups.CSV` + `Call Alert=Online Alert` in `DigitalContactList.CSV`.
+3. **Scan list Digital:** solo 9 canali IR1UGF; rimossi D2ALP e IR1UIZ.
+4. **Scan list Altri:** eliminata (canali OS4/PS2/IR3 restano in memoria, fuori zona).
+5. **Scan list CRI:** tutti i 24 canali CRI con `Scan List=CRI`.
+6. **Canale analogico APRS** (#1, 144.8 MHz): rimosso (slot vuoto).
+7. **Header CSV:** corretti `OptionalSetting.CSV` e `APRS.CSV` (campi concatenati + riga dati APRS spezzata).
 
 ### Sessione 2026-09-20
 
