@@ -19,3 +19,7 @@
 !.cursor/
 !.cursor/rules/
 !.cursor/rules/**
+
+# Backup e script locali in CurrentConfiguration (non versionare)
+CurrentConfiguration/all.tgz
+CurrentConfiguration/copia2Envy
