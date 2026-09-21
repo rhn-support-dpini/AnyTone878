@@ -57,10 +57,11 @@ Backlight 30 s: `OptionalSetting.CSV` → `AutoBKLightTime=6` (già impostato).
 
 ### IR1UGF (Ponzone, BrandMeister)
 
-| Canale | RX/TX MHz | CC | Slot | Contatto/TG |
-|--------|-----------|-----|------|-------------|
-| IR1UGF Parrot | 431.225 / 432.825 | 1 | **2** | Private 222997 |
-| IR1UGF APRS | 431.225 / 432.825 | 1 | 2 | Private 222999 |
+| Canale | Slot | Contatto/TG |
+|--------|------|-------------|
+| Worldwide, Europe, Italia | **1** | TG 222 |
+| Loca1, Cluster | **1** | TG 222 |
+| Discon, Loca2, Parrot, APRS | **2** | Parrot 222997 / APRS 222999 |
 
 - **AL-IR1UGF-Italia:** D-APRS attivo (Report Channel 1 → canale APRS)
 - **APRS Auto TX Interval:** 60 s
@@ -79,11 +80,12 @@ Stack completo (#63, #82–#89): Worldwide, Europe, Italia, Discon, Loca1, Clust
 
 | Canale | Slot | Note |
 |--------|------|------|
-| IK1HJT Parrot (#88) | 2 | Private 222997, TX Always |
-| IK1HJT APRS (#89) | 2 | Private 222999, D-APRS |
+| Worldwide, Europe, Italia | **1** | TG 222 |
+| Loca1, Cluster | **1** | TG 222 |
+| Discon, Loca2, Parrot (#88), APRS (#89) | **2** | Parrot 222997 / APRS 222999 |
 
 - **AL-IK1HJT-Italia (#83):** D-APRS attivo (Report Channel 1 → IK1HJT APRS)
-- **APRS.CSV:** `channel2=89`, `slot2=2`, TG 222999 (secondo ripetitore)
+- **APRS.CSV:** `channel1=81`/`slot1=2` (IR1UGF), `channel2=89`/`slot2=2` (IK1HJT), TG 222999
 - **Scan list Digital:** 18 canali (9 IR1UGF + 9 IK1HJT)
 - **Zona Digital:** resta solo IR1UGF (boot invariato); IK1HJT in memoria + scan
 - Rimosso vecchio canale singolo `IK1HJT Arquata` dalla zona D2ALP
@@ -103,6 +105,7 @@ Stack completo (#63, #82–#89): Worldwide, Europe, Italia, Discon, Loca1, Clust
 7. **Canale analogico APRS** (#1, 144.8 MHz): rimosso (slot vuoto).
 8. **Header CSV:** corretti `OptionalSetting.CSV` e `APRS.CSV` (campi concatenati + riga dati APRS spezzata).
 9. **Fix import CPS:** `APRS.CSV` riga dati unificata (232 colonne); `OptionalSetting.CSV` aggiunto valore mancante `SateAosLimit=0`.
+10. **Slot DMR IR1UGF/IK1HJT:** slot **1** = Worldwide/Europe/Italia/Loca1/Cluster; slot **2** = Discon/Loca2/Parrot/APRS (`APRS.CSV` slot1/slot2=2).
 
 ### Sessione 2026-09-20
 
@@ -113,7 +116,7 @@ Stack completo (#63, #82–#89): Worldwide, Europe, Italia, Discon, Loca1, Clust
 5. **Roaming:** eliminati 4 canali US 410 MHz; Roam Zone 1 vuota.
 6. Riordino zone e memoria canali (#1–#688, gruppi con 5 righe vuote).
 7. **IR1UGF:** canali Parrot + APRS, Talk Group Parrot 222997, GPS/APRS in OptionalSetting.
-8. Parrot su **slot 2**; intervallo invio posizione **60 s**.
+8. Parrot su slot 2; intervallo invio posizione **60 s**.
 9. Zona Digital: solo canali IR1UGF; avvio su Cluster + APRS; schermo diviso.
 10. **Backlight 30 s** (`AutoBKLightTime=6`); tasti P1/P2 long documentati (solo CPS).
 
