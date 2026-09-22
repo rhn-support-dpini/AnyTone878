@@ -63,7 +63,7 @@ Backlight 30 s: `OptionalSetting.CSV` → `AutoBKLightTime=6` (già impostato).
 | Loca1, Cluster | **1** | TG 222 |
 | Discon, Loca2, Parrot, APRS | **2** | Parrot 222997 / APRS 222999 |
 
-- **IR1UGF-Italia (#75):** D-APRS attivo (Report Channel 1 → IR1UGF APRS #81)
+- **IR1UGF-Italia (#83):** D-APRS attivo (Report Channel 1 → IR1UGF APRS #78)
 - **APRS Auto TX Interval:** 60 s
 - Prima attivazione APRS sulla radio: SMS `@SSID 7` in privato a 222999
 
@@ -76,15 +76,15 @@ Backlight 30 s: `OptionalSetting.CSV` → `AutoBKLightTime=6` (già impostato).
 | Offset | +7.6 MHz |
 | Color code | 1 |
 
-Stack completo (#63, #82–#89): Worldwide, Europe, Italia, Discon, Loca1, Cluster, Loca2, Parrot, APRS — stessa struttura IR1UGF.
+Stack completo (#63, #70–#77): Worldwide, Europe, Italia, Discon, Loca1, Cluster, Loca2, Parrot, APRS — stessa struttura IR1UGF.
 
 | Canale | Slot | Note |
 |--------|------|------|
 | Worldwide, Europe, Italia | **1** | TG 222 |
 | Loca1, Cluster | **1** | TG 222 |
-| Discon, Loca2, Parrot (#88), APRS (#89) | **2** | Parrot 222997 / APRS 222999 |
+| Discon, Loca2, Parrot (#71), APRS (#70) | **2** | Parrot 222997 / APRS 222999 |
 
-- **IK1HJT-Italia (#83):** D-APRS attivo (Report Channel 1 → IK1HJT APRS #89)
+- **IK1HJT-Italia (#75):** D-APRS attivo (Report Channel 1 → IK1HJT APRS #70)
 - Rimosso vecchio canale singolo `IK1HJT Arquata` dalla zona D2ALP
 
 ### IR1UIZ (Giarole, BrandMeister)
@@ -96,43 +96,49 @@ Stack completo (#63, #82–#89): Worldwide, Europe, Italia, Discon, Loca1, Clust
 | Offset | +1.6 MHz |
 | Color code | 5 |
 
-Stack (#70–#72 legacy TG + #90–#98): TG88/TG222/APRS legacy + Worldwide, Europe, Italia, Discon, Loca1, Cluster, Loca2, Parrot, APRS — tutti in DigiAL/scan Digital.
+Stack (#105–#116 + legacy TG #107–#109): TG88/TG222/APRS legacy + Worldwide, Europe, Italia, Discon, Loca1, Cluster, Loca2, Parrot, APRS — tutti in DigiAL/scan Digital. Nomi **`IR1UIZ-*`** (prefisso `AL-` rimosso).
 
 | Canale | Slot | Note |
 |--------|------|------|
 | Worldwide, Europe, Italia | **1** | TG 222 |
 | Loca1, Cluster | **1** | TG 222 |
-| Discon, Loca2, Parrot (#97), APRS (#98) | **2** | Parrot 222997 / APRS 222999 |
+| Discon, Loca2, Parrot (#106), APRS (#105) | **2** | Parrot 222997 / APRS 222999 |
 
-- **AL-IR1UIZ-Italia (#92):** D-APRS attivo (Report Channel 1 → IR1UIZ APRS)
-- **APRS.CSV:** `channel3=98`/`slot3=2` (IR1UIZ APRS), TG 222999
+- **IR1UIZ-Italia (#113):** D-APRS attivo (Report Channel 1 → IR1UIZ APRS #105)
+- **APRS.CSV:** `channel3=105`/`slot3=2` (IR1UIZ APRS), TG 222999
 - **Scan list Digital / Zona DigiAL:** vedi riepilogo sotto (66 canali totali)
 - Vecchie copie incomplete `AL-IR1UIZ-*` in memoria vhf-uhf (#431–#437) svuotate (duplicati di nome)
 
 ### IR1ZVJ / IR1UIW / IR1UIV / IR1ZZX (vhf-uhf, CC 1)
 
-Stack 9 canali ciascuno (#99–#134), inseriti in memoria dopo IR1UIZ con insert+shift; parametri dalle righe `AL-*` preesistenti in vhf-uhf (poi svuotate).
+Stack 9 canali ciascuno (#87–#134, ordine alfabetico nel blocco DigiAL), inseriti in memoria dopo IR1UIZ con insert+shift; parametri dalle righe `AL-*` preesistenti in vhf-uhf (poi svuotate).
 
-| Ponte | RX | TX | Memoria |
+| Ponte | RX | TX | Memoria (post-ordine alfabetico) |
 |-------|-----|-----|---------|
-| IR1ZVJ | 430.28750 | 431.88750 | #99–#107 |
-| IR1UIW | 431.28750 | 432.88750 | #108–#116 |
-| IR1UIV | 431.50000 | 433.10000 | #117–#125 |
+| IR1UIV | 431.50000 | 433.10000 | #87–#95 |
+| IR1UIW | 431.28750 | 432.88750 | #96–#104 |
+| IR1ZVJ | 430.28750 | 431.88750 | #117–#125 |
 | IR1ZZX | 431.52500 | 433.12500 | #126–#134 |
 
 Stessa struttura slot/contatti di IR1UGF; D-APRS su `*-Italia`; scan list **Digital**.
 
 ### DigiAL — riepilogo (66 canali)
 
+Blocco memoria **#69–#133** ordinato alfabeticamente per nome canale (riga file Channel 70–134); **#63** (`IK1HJT-Worldw`) e **#134** (`IR1ZZX APRS`) fuori dal blocco ordinato.
+
 | Ponte | Canali in zona/scan |
 |-------|---------------------|
-| IR1UGF | 9 (#73–#81) — nomi `IR1UGF-*` (senza prefisso AL-) |
-| IK1HJT | 9 (#63, #82–#89) — nomi `IK1HJT-*` |
-| IR1UIZ | 12 (#70–#72 legacy TG + #90–#98) |
-| IR1ZVJ / IR1UIW / IR1UIV / IR1ZZX | 9 ciascuno (#99–#134) |
+| IR1UGF | 9 (#78–#86) — nomi `IR1UGF-*` |
+| IK1HJT | 9 (#63, #70–#77) — nomi `IK1HJT-*` |
+| IR1UIZ | 12 (#105–#116, legacy TG #107–#109) — nomi `IR1UIZ-*` |
+| IR1UIV / IR1UIW / IR1ZVJ / IR1ZZX | 9 ciascuno (#87–#95, #96–#104, #117–#125, #126–#134) |
 
 - **Boot zona:** A = `IR1UGF-Cluste`, B = `IR1UGF APRS` (invariato)
-- **APRS.CSV:** `channel1=81`, `channel2=89`, `channel3=98` (IR1UGF / IK1HJT / IR1UIZ APRS)
+- **APRS.CSV:** `channel1=78`, `channel2=70`, `channel3=105` (IR1UGF / IK1HJT / IR1UIZ APRS)
+
+### Scan list **Anal** (#8)
+
+Nuova scan list con **tutti i 328 canali analogici** (`A-Analog`), ordinati alfabeticamente per nome. Impostazioni ereditate dalla scan list Analog esistente.
 
 ---
 
@@ -145,6 +151,9 @@ Stessa struttura slot/contatti di IR1UGF; D-APRS su `*-Italia`; scan list **Digi
 3. **IR1UIZ completo in DigiAL/scan:** aggiunti anche i 3 canali legacy `IR1UIZ TG 88/222/222999` (#70–#72) con scan list Digital; totale IR1UIZ in zona/scan: 12 canali.
 4. **Rinomina AL- → rimosso** su canali `IR1UGF-*` e `IK1HJT-*` (Channel, Zone, ScanList e CSV correlati).
 5. **Nuovi stack DigiAL:** IR1ZVJ, IR1UIW, IR1UIV, IR1ZZX (36 canali #99–#134) inseriti con shift; legacy `AL-IR1ZVJ/UIW/UIV/ZZX-*` in vhf-uhf svuotati; DigiAL/scan Digital a 66 canali.
+6. **Rinomina `AL-IR1UIZ-*` → `IR1UIZ-*`** in Channel, Zone, ScanList e CSV correlati.
+7. **Ordine alfabetico** canali DigiAL in memoria (#69–#133, righe file 70–134); aggiornati riferimenti numerici in `APRS.CSV`.
+8. **Scan list Anal (#8):** tutti i 328 canali analogici.
 
 ### Sessione 2026-09-21
 
