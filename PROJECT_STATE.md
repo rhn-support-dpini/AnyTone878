@@ -96,7 +96,7 @@ Stack completo (#63, #70–#77): Worldwide, Europe, Italia, Discon, Loca1, Clust
 | Offset | +1.6 MHz |
 | Color code | 5 |
 
-Stack (#105–#116 + legacy TG #107–#109): TG88/TG222/APRS legacy + Worldwide, Europe, Italia, Discon, Loca1, Cluster, Loca2, Parrot, APRS — tutti in DigiAL/scan Digital. Nomi **`IR1UIZ-*`** (prefisso `AL-` rimosso).
+Stack (#105–#116 + legacy TG #107–#109): TG88/TG222/APRS legacy + Worldwide, Europe, Italia, Discon, Loca1, Cluster, Loca2, Parrot, APRS — tutti in DigiAL/scan **AlDigiScan**. Nomi **`IR1UIZ-*`** (prefisso `AL-` rimosso).
 
 | Canale | Slot | Note |
 |--------|------|------|
@@ -106,7 +106,7 @@ Stack (#105–#116 + legacy TG #107–#109): TG88/TG222/APRS legacy + Worldwide,
 
 - **IR1UIZ-Italia (#113):** D-APRS attivo (Report Channel 1 → IR1UIZ APRS #105)
 - **APRS.CSV:** `channel3=105`/`slot3=2` (IR1UIZ APRS), TG 222999
-- **Scan list Digital / Zona DigiAL:** vedi riepilogo sotto (66 canali totali)
+- **Scan list AlDigiScan / Zona DigiAL:** vedi riepilogo sotto (66 canali totali)
 - Vecchie copie incomplete `AL-IR1UIZ-*` in memoria vhf-uhf (#431–#437) svuotate (duplicati di nome)
 
 ### IR1ZVJ / IR1UIW / IR1UIV / IR1ZZX (vhf-uhf, CC 1)
@@ -120,7 +120,7 @@ Stack 9 canali ciascuno (#87–#134, ordine alfabetico nel blocco DigiAL), inser
 | IR1ZVJ | 430.28750 | 431.88750 | #117–#125 |
 | IR1ZZX | 431.52500 | 433.12500 | #126–#134 |
 
-Stessa struttura slot/contatti di IR1UGF; D-APRS su `*-Italia`; scan list **Digital**.
+Stessa struttura slot/contatti di IR1UGF; D-APRS su `*-Italia`; scan list **AlDigiScan** (+ **AlDigiScan2** per limite CPS 50 canali).
 
 ### DigiAL — riepilogo (66 canali)
 
@@ -135,10 +135,13 @@ Blocco memoria **#69–#133** ordinato alfabeticamente per nome canale (riga fil
 
 - **Boot zona:** A = `IR1UGF-Cluste`, B = `IR1UGF APRS` (invariato)
 - **APRS.CSV:** `channel1=78`, `channel2=70`, `channel3=105` (IR1UGF / IK1HJT / IR1UIZ APRS)
+- **Scan list DigiAL:** `AlDigiScan` (#2, 42 canali operativi) + `DigiService` (#3, 12 Parrot/APRS dei 6 ponti IR1UGF/IK1HJT/IR1ZVJ/IR1UIW/IR1UIV/IR1ZZX). IR1UIZ fuori da entrambe.
 
-### Scan list **Anal** (#8)
+### Scan list **AlAnaScan** (#2)
 
-Nuova scan list con **tutti i 328 canali analogici** (`A-Analog`), ordinati alfabeticamente per nome. Impostazioni ereditate dalla scan list Analog esistente.
+Tutti i **12 canali analogici `AL-*`** (prefisso provinciale AL), ordinati alfabeticamente. Canali con `Scan List = AlAnaScan`.
+
+**Limite CPS:** max **50 canali** per scan list (oltre → *Import Error*).
 
 ---
 
@@ -153,7 +156,7 @@ Nuova scan list con **tutti i 328 canali analogici** (`A-Analog`), ordinati alfa
 5. **Nuovi stack DigiAL:** IR1ZVJ, IR1UIW, IR1UIV, IR1ZZX (36 canali #99–#134) inseriti con shift; legacy `AL-IR1ZVJ/UIW/UIV/ZZX-*` in vhf-uhf svuotati; DigiAL/scan Digital a 66 canali.
 6. **Rinomina `AL-IR1UIZ-*` → `IR1UIZ-*`** in Channel, Zone, ScanList e CSV correlati.
 7. **Ordine alfabetico** canali DigiAL in memoria (#69–#133, righe file 70–134); aggiornati riferimenti numerici in `APRS.CSV`.
-8. **Scan list Anal (#8):** tutti i 328 canali analogici.
+8. **Scan list AlAnaScan / AlDigiScan / DigiService:** analogici `AL-*` (12); digitali 6 ponti in `AlDigiScan` (42) e Parrot/APRS in `DigiService` (12).
 
 ### Sessione 2026-09-21
 
