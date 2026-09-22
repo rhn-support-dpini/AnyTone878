@@ -1,6 +1,6 @@
 # PROJECT_STATE — AT-DvP
 
-Ultimo aggiornamento: 2026-09-21.
+Ultimo aggiornamento: 2026-09-22.
 
 Documento di handoff per sessioni successive: radio, struttura repo, modifiche recenti, convenzioni.
 
@@ -53,7 +53,7 @@ Backlight 30 s: `OptionalSetting.CSV` → `AutoBKLightTime=6` (già impostato).
 
 ### Zone (ordine 1–10)
 
-1. Analog — 2. **DigiAL** (IR1UGF + IK1HJT) — 3. AIB — 4. Emergenza — 5. pmr — 6. lpd — 7. CRI — 8. D2ALP — 9. Marini — 10. vhf-uhf
+1. Analog — 2. **DigiAL** (IR1UGF + IK1HJT + IR1UIZ) — 3. AIB — 4. Emergenza — 5. pmr — 6. lpd — 7. CRI — 8. D2ALP — 9. Marini — 10. vhf-uhf
 
 ### IR1UGF (Ponzone, BrandMeister)
 
@@ -90,9 +90,38 @@ Stack completo (#63, #82–#89): Worldwide, Europe, Italia, Discon, Loca1, Clust
 - **Zona DigiAL (#2):** 18 canali (9 IR1UGF + 9 IK1HJT); boot invariato su Cluster + APRS IR1UGF
 - Rimosso vecchio canale singolo `IK1HJT Arquata` dalla zona D2ALP
 
+### IR1UIZ (Giarole, BrandMeister)
+
+| Parametro | Valore |
+|-----------|--------|
+| Downlink (RX) | 431.43750 MHz |
+| Uplink (TX) | 433.03750 MHz |
+| Offset | +1.6 MHz |
+| Color code | 5 |
+
+Stack (#70–#72 legacy TG + #90–#98): TG88/TG222/APRS legacy + Worldwide, Europe, Italia, Discon, Loca1, Cluster, Loca2, Parrot, APRS — tutti in DigiAL/scan Digital.
+
+| Canale | Slot | Note |
+|--------|------|------|
+| Worldwide, Europe, Italia | **1** | TG 222 |
+| Loca1, Cluster | **1** | TG 222 |
+| Discon, Loca2, Parrot (#97), APRS (#98) | **2** | Parrot 222997 / APRS 222999 |
+
+- **AL-IR1UIZ-Italia (#92):** D-APRS attivo (Report Channel 1 → IR1UIZ APRS)
+- **APRS.CSV:** `channel3=98`/`slot3=2` (IR1UIZ APRS), TG 222999
+- **Scan list Digital:** 30 canali (9 IR1UGF + 9 IK1HJT + 12 IR1UIZ)
+- **Zona DigiAL (#2):** 30 canali; boot invariato su Cluster + APRS IR1UGF
+- Vecchie copie incomplete `AL-IR1UIZ-*` in memoria vhf-uhf (#431–#437) svuotate (duplicati di nome)
+
 ---
 
 ## Modifiche applicate (cronologia)
+
+### Sessione 2026-09-22
+
+1. **Fix inserimento IK1HJT:** i canali `PC Ponte` (#90), `PC Diretta` (#91) e `AIB Diretta 1` (#92) erano stati sovrascritti dallo stack IK1HJT (#82–#89); ripristinati con inserimento a #90 e shift delle righe successive (688 slot totali invariati). Zona/scan AIB già corretti per nome.
+2. **IR1UIZ stack DigiAL:** inseriti 9 canali (#90–#98) dopo IK1HJT APRS con insert+shift (AIB da #99); parametri da righe IR1UIZ esistenti (431.43750/433.03750, CC 5); zona DigiAL, scan Digital e APRS channel3 aggiornati.
+3. **IR1UIZ completo in DigiAL/scan:** aggiunti anche i 3 canali legacy `IR1UIZ TG 88/222/222999` (#70–#72) con scan list Digital; totale IR1UIZ in zona/scan: 12 canali.
 
 ### Sessione 2026-09-21
 
