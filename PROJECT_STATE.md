@@ -1,6 +1,6 @@
 # PROJECT_STATE — AT-DvP
 
-Ultimo aggiornamento: 2026-09-22.
+Ultimo aggiornamento: 2026-09-26.
 
 Documento di handoff per sessioni successive: radio, struttura repo, modifiche recenti, convenzioni.
 
@@ -134,7 +134,7 @@ Blocco memoria **#69–#133** ordinato alfabeticamente per nome canale (riga fil
 | IR1UIV / IR1UIW / IR1ZVJ / IR1ZZX | 9 ciascuno (#87–#95, #96–#104, #117–#125, #126–#134) |
 
 - **Boot zona:** A = `IR1UGF-Cluste`, B = `IR1UGF APRS` (invariato)
-- **APRS.CSV:** `channel1=78`, `channel2=70`, `channel3=105` (IR1UGF / IK1HJT / IR1UIZ APRS)
+- **APRS.CSV:** `channel1=72`, `channel2=64`, `channel3=99` (IR1UGF / IK1HJT / IR1UIZ APRS)
 - **Scan list DigiAL:** `AlDigiScan` (#2, 42 canali operativi) + `DigiService` (#3, 12 Parrot/APRS dei 6 ponti IR1UGF/IK1HJT/IR1ZVJ/IR1UIW/IR1UIV/IR1ZZX). IR1UIZ fuori da entrambe.
 
 ### Scan list **AlAnaScan** (#2)
@@ -146,6 +146,12 @@ Tutti i **12 canali analogici `AL-*`** (prefisso provinciale AL), ordinati alfab
 ---
 
 ## Modifiche applicate (cronologia)
+
+### Sessione 2026-09-26
+
+1. **Rimossi 48 slot spacer** in `Channel.CSV` (righe vuote con valori CPS di default: 12.5K, Carrier, ecc.) inserite per separare i blocchi memoria; canali compattati da 688 a **640** con rinumerazione continua.
+2. **APRS.CSV** aggiornato: `channel1=72` (IR1UGF APRS), `channel2=64` (IK1HJT APRS), `channel3=99` (IR1UIZ APRS).
+3. Zone e scan list invariate (riferimenti per nome). `StartCurChan1/2` in `OptionalSetting.CSV` invariati (posizione in zona, non indice memoria).
 
 ### Sessione 2026-09-22
 
@@ -179,7 +185,7 @@ Tutti i **12 canali analogici `AL-*`** (prefisso provinciale AL), ordinati alfab
 3. **Scan Analog:** aggiunta Diretta; **Scan CRI:** rimossi RRM ch 8/16.
 4. **RIP G ANAL** → AIB Rpt Ana G, potenza High.
 5. **Roaming:** eliminati 4 canali US 410 MHz; Roam Zone 1 vuota.
-6. Riordino zone e memoria canali (#1–#688, gruppi con 5 righe vuote).
+6. Riordino zone e memoria canali (ex #1–#688 con spacer; spacer rimossi in sessione 2026-09-26 → **640 canali** compatti).
 7. **IR1UGF:** canali Parrot + APRS, Talk Group Parrot 222997, GPS/APRS in OptionalSetting.
 8. Parrot su slot 2; intervallo invio posizione **60 s**.
 9. Zona Digital: solo canali IR1UGF; avvio su Cluster + APRS; schermo diviso.
