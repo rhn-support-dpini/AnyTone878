@@ -149,7 +149,11 @@ Tutti i **12 canali analogici `AL-*`** (prefisso provinciale AL), ordinati alfab
 
 ### Sessione 2026-09-27
 
-1. **Canali CRI (24):** CTCSS Decode/Encode impostati su **Off** (prima 156.7).
+1. **4 canali DMR CRI** inseriti dopo **CRI 24** (#277–#280) con shift memoria (644 canali totali):
+   - `cri16A Digi` / `cri16B Digi`: 167.375 / 162.775 MHz, CC 0, slot 1/2, TG 7
+   - `cri22A Digi` / `cri22B Digi`: 173.2875 simplex, CC 0, slot 1/2, TG 7
+   - Aggiunto **TG 7** in `TalkGroups.CSV`; zona e scan list **CRI** aggiornate (28 canali).
+2. **Canali CRI analogici (24):** CTCSS Decode/Encode impostati su **Off** (prima 156.7).
 2. **Frequenze CRI corrette** su `Channel.CSV`, `Zone.CSV` e `ScanList.CSV`:
    - CRI 01: RX 172.957 / TX 167.375 (erano 171.975 / 157.325)
    - CRI 07: TX 172.975 (era 171.975 simplex)
@@ -180,7 +184,7 @@ Tutti i **12 canali analogici `AL-*`** (prefisso provinciale AL), ordinati alfab
 3. **Friend/contact Enzo IK1EVM:** DMR ID 2221707 in `TalkGroups.CSV` + `Call Alert=Online Alert` in `DigitalContactList.CSV`.
 4. **Scan list Digital:** solo 9 canali IR1UGF; rimossi D2ALP e IR1UIZ.
 5. **Scan list Altri:** eliminata (canali OS4/PS2/IR3 restano in memoria, fuori zona).
-6. **Scan list CRI:** tutti i 24 canali CRI con `Scan List=CRI`.
+6. **Scan list CRI:** tutti i canali CRI (analogici + 4 DMR) con `Scan List=CRI`.
 7. **Canale analogico APRS** (#1, 144.8 MHz): rimosso (slot vuoto).
 8. **Header CSV:** corretti `OptionalSetting.CSV` e `APRS.CSV` (campi concatenati + riga dati APRS spezzata).
 9. **Fix import CPS:** `APRS.CSV` riga dati unificata (232 colonne); `OptionalSetting.CSV` aggiunto valore mancante `SateAosLimit=0`.
@@ -194,7 +198,7 @@ Tutti i **12 canali analogici `AL-*`** (prefisso provinciale AL), ordinati alfab
 3. **Scan Analog:** aggiunta Diretta; **Scan CRI:** rimossi RRM ch 8/16.
 4. **RIP G ANAL** → AIB Rpt Ana G, potenza High.
 5. **Roaming:** eliminati 4 canali US 410 MHz; Roam Zone 1 vuota.
-6. Riordino zone e memoria canali (ex #1–#688 con spacer; spacer rimossi in sessione 2026-09-26 → **640 canali** compatti).
+6. Riordino zone e memoria canali (ex #1–#688 con spacer; spacer rimossi in sessione 2026-09-26 → **640 canali** compatti; **644** dopo inserimento CRI DMR 2026-09-27).
 7. **IR1UGF:** canali Parrot + APRS, Talk Group Parrot 222997, GPS/APRS in OptionalSetting.
 8. Parrot su slot 2; intervallo invio posizione **60 s**.
 9. Zona Digital: solo canali IR1UGF; avvio su Cluster + APRS; schermo diviso.
