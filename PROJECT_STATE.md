@@ -1,6 +1,6 @@
 # PROJECT_STATE — AT-DvP
 
-Ultimo aggiornamento: 2026-09-26.
+Ultimo aggiornamento: 2026-09-27.
 
 Documento di handoff per sessioni successive: radio, struttura repo, modifiche recenti, convenzioni.
 
@@ -147,6 +147,15 @@ Tutti i **12 canali analogici `AL-*`** (prefisso provinciale AL), ordinati alfab
 
 ## Modifiche applicate (cronologia)
 
+### Sessione 2026-09-27
+
+1. **Canali CRI (24):** CTCSS Decode/Encode impostati su **Off** (prima 156.7).
+2. **Frequenze CRI corrette** su `Channel.CSV`, `Zone.CSV` e `ScanList.CSV`:
+   - CRI 01: RX 172.957 / TX 167.375 (erano 171.975 / 157.325)
+   - CRI 07: TX 172.975 (era 171.975 simplex)
+   - CRI 09–12: RX/TX spostati da 172.xxx a **173.xxx** (173.25–173.325)
+3. Potenza **High** e passo **12.5K** confermati su tutti i CRI.
+
 ### Sessione 2026-09-26
 
 1. **Rimossi 48 slot spacer** in `Channel.CSV` (righe vuote con valori CPS di default: 12.5K, Carrier, ecc.) inserite per separare i blocchi memoria; canali compattati da 688 a **640** con rinumerazione continua.
@@ -181,7 +190,7 @@ Tutti i **12 canali analogici `AL-*`** (prefisso provinciale AL), ordinati alfab
 ### Sessione 2026-09-20
 
 1. Audit generale: 621 canali, 10 zone, 8 scan list — nessun errore strutturale grave.
-2. **CRI** (24 canali): potenza High, CTCSS decode 156.7.
+2. **CRI** (24 canali): potenza High, CTCSS Off, passo 12.5K (aggiornato 2026-09-27).
 3. **Scan Analog:** aggiunta Diretta; **Scan CRI:** rimossi RRM ch 8/16.
 4. **RIP G ANAL** → AIB Rpt Ana G, potenza High.
 5. **Roaming:** eliminati 4 canali US 410 MHz; Roam Zone 1 vuota.
