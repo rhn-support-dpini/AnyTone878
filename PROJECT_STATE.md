@@ -1,6 +1,6 @@
 # PROJECT_STATE — AT-DvP
 
-Ultimo aggiornamento: 2026-09-27.
+Ultimo aggiornamento: 2026-09-29.
 
 Documento di handoff per sessioni successive: radio, struttura repo, modifiche recenti, convenzioni.
 
@@ -146,6 +146,16 @@ Tutti i **12 canali analogici `AL-*`** (prefisso provinciale AL), ordinati alfab
 ---
 
 ## Modifiche applicate (cronologia)
+
+### Sessione 2026-09-29
+
+1. **Canali CRI — Radio ID:** in `Channel.CSV`, colonna **Radio ID** impostata su **TBD** (invece di IU1FLA) per tutti i 28 canali con "cri" nel nome (24 analogici CRI 01–24 + 4 DMR cri16A/B, cri22A/B). Riferimento in `RadioIDList.CSV`: voce #3 `222` / `TBD`.
+2. **Inserimento piano CRI Tabella1** (60 canali da `AnalogChannel-Tabella1.csv` + `DigitalChannel-Tabella1.csv`) dopo `cri22B Digi` (#280), con shift di 364 canali esistenti:
+   - **#281–#304:** 24 analogici `Canale 01 ANL` … `Canale 24 ANL` (CTCSS TX 156.7 sui repeater, Off sui simplex; Radio ID TBD; scan CRI/CRI2)
+   - **#305–#340:** 36 digitali `Canale XXaDMR`/`XXbDMR`/`XX DMR` (TG 7, CC 7, slot 1/2 da suffisso a/b; Radio ID TBD)
+   - Totale canali: **704** (era 644). `RRM ch 8/16` ora #341.
+   - **Zona CRI:** 88 canali. **Scan list CRI** limitata a 50 (CPS max) + nuova **CRI2** (#9) con 38 canali overflow (#303–#340).
+   - `APRS.CSV` invariato (riferimenti #72/#64/#99 < #281).
 
 ### Sessione 2026-09-27
 
